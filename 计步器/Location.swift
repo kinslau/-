@@ -16,42 +16,56 @@ import CoreLocation
 
 class Location: NSObject,CLLocationManagerDelegate{
     
-
+    
+    var loca:CLLocationCoordinate2D?
+    
+    var minspeed:Double?
+    var minFilter:Double?
+    var minInterval:CGFloat?
+    
     var delegate:PassValueLocationDelegate?
     var clManager:CLLocationManager!
  
     var geocoder:CLGeocoder!
+    static let instance = Location()
     
-    override  init() {
+    private  override  init() {
         super.init()
+        
+            self.minFilter = 1
+            self.minInterval = 5
+            self.minspeed = 3
+        
             clManager = CLLocationManager()
-            clManager.requestAlwaysAuthorization()
-            print("Location初始化完成")
+          //  clManager.requestAlwaysAuthorization()
+        
         
             clManager.desiredAccuracy = kCLLocationAccuracyBest
-            clManager.distanceFilter = 10  //1米定位以此
+            clManager.distanceFilter = self.minFilter!  //1米定位以此
             geocoder = CLGeocoder()
             clManager.delegate = self
-            //self.delegate = ViewController.sharedInstance()
+          
    
+        
+        
     }
 
+ 
     //反地理编码
     func getAddressByLatitude(latitude:CLLocationDegrees,longitude:CLLocationDegrees){
-        
-        print("进行反地理编码")
+     
         var location = CLLocation(latitude: latitude, longitude: longitude)
         geocoder.reverseGeocodeLocation(location) { (placemarks, error)-> Void in
             
             if placemarks != nil{
                 var placemark:CLPlacemark  = placemarks!.first!
                 NSLog("_______________________________")
-                NSLog("详细信息:%@",placemark.addressDictionary!)
-                var dict:NSDictionary = placemark.addressDictionary as! NSDictionary
+//                NSLog("详细信息:%@",placemark.addressDictionary!)
+//                var dict:NSDictionary = placemark.addressDictionary as! NSDictionary
+//                
+//                print("国家:\(dict["country"]) 地区：\(dict["Name"]) 位置：\(dict["Street"])")
                 
-                print("国家:\(dict["country"]) 地区：\(dict["Name"]) 位置：\(dict["Street"])")
-                
-                NSLog("_______________________________")
+             
             }else{
                 print("++++++++++++++++++++++++++++++")
             }
@@ -59,11 +73,19 @@ class Location: NSObject,CLLocationManagerDelegate{
     }
 
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+      
         
-        print("定位代理方法：————————————————————————")
-        print(self.delegate)
+        
+       
         var location = locations.first
+        
+         NSLog("%@", location!)
+  
+        
         var coordinate:CLLocationCoordinate2D? = (location?.coordinate)! //坐标
+        
+        self.loca = coordinate
+        
         
         if coordinate != nil {
             NSLog("经度：%f,纬度：%f,海拔：%f,航向：%f,行走速度：%f",coordinate!.longitude,coordinate!.latitude,location!.altitude,location!.course,location!.speed)

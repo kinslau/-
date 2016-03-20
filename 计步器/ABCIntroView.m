@@ -62,7 +62,7 @@
         
         UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width*.1, self.frame.size.height*.1, self.frame.size.width*.8, self.frame.size.width)];
         imageview.contentMode = UIViewContentModeScaleAspectFit;
-        imageview.image = [UIImage imageNamed:@"Intro_Screen_One"];
+        imageview.image = [UIImage imageNamed:@"v1"];
         [_viewOne addSubview:imageview];
         
         UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width*.1, self.frame.size.height*.7, self.frame.size.width*.8, 60)];
@@ -100,7 +100,7 @@
         
         UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width*.1, self.frame.size.height*.1, self.frame.size.width*.8, self.frame.size.width)];
         imageview.contentMode = UIViewContentModeScaleAspectFit;
-        imageview.image = [UIImage imageNamed:@"Intro_Screen_Two"];
+        imageview.image = [UIImage imageNamed:@"v2"];
         [_viewTwo addSubview:imageview];
         
         UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width*.1, self.frame.size.height*.7, self.frame.size.width*.8, 60)];
@@ -138,7 +138,7 @@
         
         UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width*.1, self.frame.size.height*.1, self.frame.size.width*.8, self.frame.size.width)];
         imageview.contentMode = UIViewContentModeScaleAspectFit;
-        imageview.image = [UIImage imageNamed:@"Intro_Screen_Three"];
+        imageview.image = [UIImage imageNamed:@"v3"];
         [_viewThree addSubview:imageview];
         
         
@@ -177,7 +177,7 @@
         
         UIImageView *imageview = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width*.1, self.frame.size.height*.1, self.frame.size.width*.8, self.frame.size.width)];
         imageview.contentMode = UIViewContentModeScaleAspectFit;
-        imageview.image = [UIImage imageNamed:@"Intro_Screen_Four"];
+        imageview.image = [UIImage imageNamed:@"v4"];
         [_viewFour addSubview:imageview];
         
         UILabel *descriptionLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.frame.size.width*.1, self.frame.size.height*.7, self.frame.size.width*.8, 60)];
