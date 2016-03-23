@@ -10,7 +10,7 @@ import UIKit
 
 import CoreLocation
 
-class ViewController: UIViewController,PassValueLocationDelegate,SideMenuDelegate,ABCIntroViewDelegate {
+class ViewController: UIViewController,PassValueLocationDelegate,SideMenuDelegate,ABCIntroViewDelegate,WeatherDelegate {
    
     var ce:Cences?
     let runVc:RunVC = RunVC()
@@ -18,7 +18,12 @@ class ViewController: UIViewController,PassValueLocationDelegate,SideMenuDelegat
     var sideMenu:SideMenu?
     var introView:ABCIntroView?
     var chartView:CBChartView?
- 
+     
+    
+    @IBOutlet weak var weatherLabel: UILabel!
+    
+    @IBOutlet weak var tempLabel: UILabel!
+    @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet var statusView: UIView!
     @IBOutlet var headImg: UIImageView!
     
@@ -27,7 +32,7 @@ class ViewController: UIViewController,PassValueLocationDelegate,SideMenuDelegat
     
   
     @IBAction func headBtn(sender: UIButton) {
-        
+        print("__________")
         
     }
     
@@ -46,6 +51,13 @@ class ViewController: UIViewController,PassValueLocationDelegate,SideMenuDelegat
         self.statusView.backgroundColor = UIColor.greenColor()
         self.statusView.alpha = 0.8
 
+        
+        
+        var w = Weather()
+        w.delegate = self
+        
+        
+        
         
         
      //   var nib = UINib(nibName: "RunVC", bundle: nil)
@@ -69,7 +81,7 @@ class ViewController: UIViewController,PassValueLocationDelegate,SideMenuDelegat
 
     
     func Configure(){
-        sideMenu = SideMenu(sourceView: self.view, menuData: ["地图","记录","设置","关于"])
+        sideMenu = SideMenu(sourceView: self.view, menuData: ["地图","设置","关于"])
         sideMenu?.delegate = self
 
         location = Location.instance
@@ -129,14 +141,42 @@ class ViewController: UIViewController,PassValueLocationDelegate,SideMenuDelegat
         
         runVc.ce = Cences()
         runVc.ce!.time = NSDate()
+        
+        print(runVc.ce!.time)
         runVc.ce!.loca = location.loca
+        
+       
+      
+        
+        
         self.navigationController?.pushViewController(runVc, animated: true)
 
     }
     
+    
+    
+    
+    
+    func refreshTime(){
+        
+        
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
+    }
+    
+    
+    
+    func currenWeather(city: String, tem: String, weather: String) {
+        
+        
+        self.cityLabel.text = city
+        self.tempLabel.text = tem + " 摄氏度"
+        self.weatherLabel.text = weather
     }
 
     //自定义定位代理
@@ -150,11 +190,8 @@ class ViewController: UIViewController,PassValueLocationDelegate,SideMenuDelegat
         case 0:
             self.navigationController?.pushViewController(MapViewController(), animated: false)
         case 1:
-            self.navigationController?.pushViewController(MapViewController(), animated: true)
-        case 2:
             self.navigationController?.pushViewController(SettingVC(), animated: true)
-        case 3:
-            self.navigationController?.pushViewController(SettingVC(), animated: true)
+        
         default:
             self.navigationController?.pushViewController(SettingVC(), animated: true)
             

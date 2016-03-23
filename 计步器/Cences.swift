@@ -22,6 +22,8 @@ class Cences: NSObject {
     override init() {
         super.init()
     }
+    
+    
     init(location:CLLocationCoordinate2D,distance:Int,time:NSDate,interval:NSDate) {
  
         

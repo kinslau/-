@@ -16,14 +16,17 @@ class RunVC: UIViewController,UIAlertViewDelegate {
     var mapVC:MapViewController?
   
     let mVC:Music = Music()
-
+  
+    var time:NSTimeInterval?
+    var timer:NSTimer!
   
     @IBOutlet var label: UILabel!
 
-    @IBOutlet var label2: UILabel!
+    @IBOutlet weak var intervarLabel: UILabel!
+
+    @IBOutlet weak var timeView: UIView!
     
-    
-    
+
     @IBAction func `switch`(sender: UISwitch) {
         
         if sender.on {
@@ -48,7 +51,16 @@ class RunVC: UIViewController,UIAlertViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "runback")!)
+       
+        self.timeView.layer.cornerRadius = 75
+        self.timeView.layer.masksToBounds = true
+        self.timeView.layer.borderColor = UIColor.greenColor().CGColor
+        self.timeView.layer.borderWidth = 6
+        self.timeView.backgroundColor = UIColor.blackColor()
+     
         
+
         
         var mapView = UIView(frame: CGRect(x: 0, y: 20, width: Commen.ScreenWeight, height: Commen.ScrrenHeight/2-30))
         self.view.addSubview(mapView)
@@ -60,11 +72,50 @@ class RunVC: UIViewController,UIAlertViewDelegate {
         self.label.layer.masksToBounds = true
         
         
-        self.label2.layer.cornerRadius = 10
-        self.label2.layer.masksToBounds = true
+        timer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: "refresh", userInfo: nil, repeats: true)
+        
+
+        
+        
+        
+        
     
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(true)
+        
+        timer.fireDate = NSDate.distantPast()
+    }
 
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(true)
+        
+        timer.fireDate = NSDate.distantFuture()
+    }
+    
+    
+    
+    func refresh(){
+        
+        time = NSDate().timeIntervalSinceDate(ce!.time!)
+     
+        
+        print("____________")
+         var   t = Int(time!)
+       
+        var h:Int = Int(t/3600) //时
+        var s = Int(t%60) //秒
+        var m = (t-s-3600*h)/60
+        
+      
+        self.intervarLabel.text = "\(h):\(m):\(s)"
+        
+        
+        
+        
+    }
     
     
   
@@ -74,6 +125,9 @@ class RunVC: UIViewController,UIAlertViewDelegate {
         var alertView = UIAlertView(title: "停止运动", message: "是否停止运动", delegate: self, cancelButtonTitle: "取消", otherButtonTitles: "确定停止")
      
         alertView.show()
+        
+        
+        
     }
     
     
@@ -85,9 +139,13 @@ class RunVC: UIViewController,UIAlertViewDelegate {
             location = Location.instance
             location?.stopLocation()
 
+            
+            
             ce!.interval = NSDate().timeIntervalSinceDate(ce!.time!)
          
             NSLog("相差%g秒", ce!.interval!)
+            self.timer.fireDate = NSDate.distantFuture()
+            
             self.mVC.delegate!.stop!()
             self.navigationController?.popViewControllerAnimated(true)
  

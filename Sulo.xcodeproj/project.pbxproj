@@ -11,6 +11,12 @@
 		020215971C9AB22300D5F0D0 /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 020215961C9AB22300D5F0D0 /* SettingVC.swift */; };
 		020215991C9AB5B300D5F0D0 /* SettingVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 020215981C9AB5B300D5F0D0 /* SettingVC.xib */; };
 		0202159D1C9AC70F00D5F0D0 /* Little Numbers.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0202159C1C9AC70F00D5F0D0 /* Little Numbers.mp3 */; };
+		0232975D1CA1676A009E91AC /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0232975C1CA1676A009E91AC /* Weather.swift */; };
+		0232975F1CA17717009E91AC /* runback.png in Resources */ = {isa = PBXBuildFile; fileRef = 0232975E1CA17717009E91AC /* runback.png */; };
+		023297661CA17BF5009E91AC /* C415F3F13BBD50B1-info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 023297611CA17BF5009E91AC /* C415F3F13BBD50B1-info.plist */; };
+		023297671CA17BF5009E91AC /* STLVideoFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 023297631CA17BF5009E91AC /* STLVideoFunctions.m */; };
+		023297681CA17BF5009E91AC /* STLVideoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 023297651CA17BF5009E91AC /* STLVideoViewController.m */; };
+		0232976A1CA17CB9009E91AC /* LauchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 023297691CA17CB9009E91AC /* LauchVC.swift */; };
 		0254FC981C99779C0076D015 /* RunVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0254FC961C99779C0076D015 /* RunVC.swift */; };
 		0254FC991C99779C0076D015 /* RunVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0254FC971C99779C0076D015 /* RunVC.xib */; };
 		02E0789D1C97D1B700E4BA01 /* ABCIntroView.m in Sources */ = {isa = PBXBuildFile; fileRef = 02E0789C1C97D1B700E4BA01 /* ABCIntroView.m */; };
@@ -59,6 +65,14 @@
 		020215961C9AB22300D5F0D0 /* SettingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		020215981C9AB5B300D5F0D0 /* SettingVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingVC.xib; sourceTree = "<group>"; };
 		0202159C1C9AC70F00D5F0D0 /* Little Numbers.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Little Numbers.mp3"; sourceTree = "<group>"; };
+		0232975C1CA1676A009E91AC /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		0232975E1CA17717009E91AC /* runback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = runback.png; sourceTree = "<group>"; };
+		023297611CA17BF5009E91AC /* C415F3F13BBD50B1-info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "C415F3F13BBD50B1-info.plist"; sourceTree = "<group>"; };
+		023297621CA17BF5009E91AC /* STLVideoFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STLVideoFunctions.h; sourceTree = "<group>"; };
+		023297631CA17BF5009E91AC /* STLVideoFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STLVideoFunctions.m; sourceTree = "<group>"; };
+		023297641CA17BF5009E91AC /* STLVideoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STLVideoViewController.h; sourceTree = "<group>"; };
+		023297651CA17BF5009E91AC /* STLVideoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STLVideoViewController.m; sourceTree = "<group>"; };
+		023297691CA17CB9009E91AC /* LauchVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LauchVC.swift; sourceTree = "<group>"; };
 		0254FC961C99779C0076D015 /* RunVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunVC.swift; sourceTree = "<group>"; };
 		0254FC971C99779C0076D015 /* RunVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RunVC.xib; sourceTree = "<group>"; };
 		02E0789A1C97D1B600E4BA01 /* 计步器-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "计步器-Bridging-Header.h"; sourceTree = "<group>"; };
@@ -123,6 +137,7 @@
 		0202159E1C9ACD0500D5F0D0 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0232975E1CA17717009E91AC /* runback.png */,
 				02F7C6921C9A859500F7DC12 /* szj.jpg */,
 				02E6B1E71C95A7CD006BA1EB /* image.png */,
 				02F7C6941C9A8D4900F7DC12 /* v4.png */,
@@ -133,12 +148,25 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		023297601CA17BF5009E91AC /* STLBGVideo */ = {
+			isa = PBXGroup;
+			children = (
+				023297611CA17BF5009E91AC /* C415F3F13BBD50B1-info.plist */,
+				023297621CA17BF5009E91AC /* STLVideoFunctions.h */,
+				023297631CA17BF5009E91AC /* STLVideoFunctions.m */,
+				023297641CA17BF5009E91AC /* STLVideoViewController.h */,
+				023297651CA17BF5009E91AC /* STLVideoViewController.m */,
+			);
+			path = STLBGVideo;
+			sourceTree = "<group>";
+		};
 		02E0788F1C97BFD200E4BA01 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				023297691CA17CB9009E91AC /* LauchVC.swift */,
 				02E6B1B11C9572A7006BA1EB /* ViewController.swift */,
-				020215961C9AB22300D5F0D0 /* SettingVC.swift */,
 				0254FC961C99779C0076D015 /* RunVC.swift */,
+				020215961C9AB22300D5F0D0 /* SettingVC.swift */,
 				02E6B1E11C958DE9006BA1EB /* MapViewController.swift */,
 			);
 			name = View;
@@ -149,6 +177,7 @@
 			children = (
 				02E6B1DF1C958874006BA1EB /* Location.swift */,
 				02F7C68E1C9A660000F7DC12 /* Cences.swift */,
+				0232975C1CA1676A009E91AC /* Weather.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -196,6 +225,7 @@
 		02E078951C97C04300E4BA01 /* ThirdSDK */ = {
 			isa = PBXGroup;
 			children = (
+				023297601CA17BF5009E91AC /* STLBGVideo */,
 				02E078A81C993EE600E4BA01 /* CBChart */,
 				02E6B1E31C95A73A006BA1EB /* SideMenu.swift */,
 				02E6B1E41C95A73A006BA1EB /* MenuTableViewController.swift */,
@@ -387,6 +417,8 @@
 				02F7C69B1C9A8D4900F7DC12 /* v1.png in Resources */,
 				02E6B1E81C95A7CD006BA1EB /* image.png in Resources */,
 				02F7C6991C9A8D4900F7DC12 /* v3.png in Resources */,
+				023297661CA17BF5009E91AC /* C415F3F13BBD50B1-info.plist in Resources */,
+				0232975F1CA17717009E91AC /* runback.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,9 +444,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				02E6B1B21C9572A7006BA1EB /* ViewController.swift in Sources */,
+				023297671CA17BF5009E91AC /* STLVideoFunctions.m in Sources */,
 				020215971C9AB22300D5F0D0 /* SettingVC.swift in Sources */,
 				02E0789D1C97D1B700E4BA01 /* ABCIntroView.m in Sources */,
+				023297681CA17BF5009E91AC /* STLVideoViewController.m in Sources */,
 				02E078A61C993EB200E4BA01 /* UIView+FrameSet.m in Sources */,
+				0232975D1CA1676A009E91AC /* Weather.swift in Sources */,
 				02E6B1E01C958874006BA1EB /* Location.swift in Sources */,
 				02E6B1E61C95A73A006BA1EB /* MenuTableViewController.swift in Sources */,
 				020215951C9AB1E800D5F0D0 /* Music.swift in Sources */,
@@ -424,6 +459,7 @@
 				02F7C68F1C9A660000F7DC12 /* Cences.swift in Sources */,
 				0254FC981C99779C0076D015 /* RunVC.swift in Sources */,
 				02E6B1EE1C95B841006BA1EB /* Commen.swift in Sources */,
+				0232976A1CA17CB9009E91AC /* LauchVC.swift in Sources */,
 				02E6B1E21C958DE9006BA1EB /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

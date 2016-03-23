@@ -10,6 +10,8 @@ import UIKit
 
 //配置全局常量
 
+
+
 class Commen: NSObject {
     static let ScrrenHeight = UIScreen.mainScreen().bounds.height
     static let ScreenWeight = UIScreen.mainScreen().bounds.width
